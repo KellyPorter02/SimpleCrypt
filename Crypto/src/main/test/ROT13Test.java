@@ -79,7 +79,7 @@ public class ROT13Test {
         ROT13 cipher = new ROT13('a', 'n');
 
         String Q1 = "Why did the chicken cross the road?";
-        System.out.println(Q1);
+//        System.out.println(Q1);
 
         // When
         String actual = cipher.crypt(cipher.crypt(Q1));
@@ -87,5 +87,6 @@ public class ROT13Test {
         // Then
         assertTrue(actual.equals(Q1));
     }
+
 
 }
