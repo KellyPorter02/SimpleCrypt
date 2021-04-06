@@ -5,11 +5,12 @@ import static java.lang.Character.toLowerCase;
 public class ROT13  {
 
 
-    public String upperCaseAlphaString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public String lowerCaseAlphaString = "abcdefghijklmnopqrstuvwxyz";
+    public static String upperCaseAlphaString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public static String lowerCaseAlphaString = "abcdefghijklmnopqrstuvwxyz";
     public String specialCharacters = "', :.?!";
     private String upperCaseEncryptString;
     private String lowerCaseEncryptString;
+    private int shift;
 
 
     ROT13(Character cs, Character cf) {
