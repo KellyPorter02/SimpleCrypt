@@ -2,16 +2,15 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class ROTCaesarTest {
-
+public class ROTKPTest {
 
     @Test
     public void cryptTest1() {
         // Given
-        ROTCaesar cipher = new ROTCaesar('A', 'D');
+        ROTKP cipher = new ROTKP('K', 'P');
 
         String input = "Why did the chicken cross the road?";
-        String expected = "Tev afa qeb zefzhbk zolpp qeb olxa?";
+        String expected = "Rct ydy ocz xcdxfzi xmjnn ocz mjvy?";
 
         // When
         String actual = cipher.encrypt(input);
@@ -25,9 +24,9 @@ public class ROTCaesarTest {
     @Test
     public void cryptTest2() {
         // Given
-        ROTCaesar cipher = new ROTCaesar('a', 'd');
+        ROTKP cipher = new ROTKP('k', 'p');
 
-        String encrypted = "Tev afa qeb zefzhbk zolpp qeb olxa?";
+        String encrypted = "Rct ydy ocz xcdxfzi xmjnn ocz mjvy?";
         String expected = "Why did the chicken cross the road?";
 
         // When
@@ -37,4 +36,5 @@ public class ROTCaesarTest {
         // Then
         assertEquals(expected, actual2);
     }
+
 }

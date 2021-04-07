@@ -50,7 +50,7 @@ public class ROTNShiftTest {
     @Test
     public void cryptTest1() {
         // Given
-        ROTNShift cipher = new ROTNShift('a', 'n');
+        ROTNShift cipher = new ROTNShift('A', 'N');
 
         String Q1 = "Why did the chicken cross the road?";
         String A1 = "Jul qvq gur puvpxra pebff gur ebnq?";
@@ -72,19 +72,40 @@ public class ROTNShiftTest {
         // Then
         assertTrue(actual2.equals(A2));
     }
+
     @Test
-    public void cryptTest2() {
+    public void calculateShift() {
         // Given
-        ROTNShift cipher = new ROTNShift('a', 'n');
-
-        String Q1 = "Why did the chicken cross the road?";
-        System.out.println(Q1);
-
+        int expected = 2;
         // When
-        String actual = cipher.crypt(cipher.crypt(Q1));
-        System.out.println(actual);
+        ROTNShift cipher = new ROTNShift();
+        int returned = cipher.calculateShift('a', 'c');
         // Then
-        assertTrue(actual.equals(Q1));
+        assertEquals(expected, returned);
     }
+
+    @Test
+    public void calculateShift2() {
+        // Given
+        int expected = 2;
+        // When
+        ROTNShift cipher = new ROTNShift();
+        int returned = cipher.calculateShift('Y', 'A');
+        // Then
+        assertEquals(expected, returned);
+    }
+
+    @Test
+    public void shiftString() {
+        // Given
+        String expected = "CDAB";
+        // When
+        ROTNShift cipher = new ROTNShift();
+        String returned = cipher.shiftString("ABCD");
+        System.out.println(returned);
+        // Then
+        assertEquals(expected, returned);
+    }
+
 
 }

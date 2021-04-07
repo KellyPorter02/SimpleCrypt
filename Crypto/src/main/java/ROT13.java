@@ -2,19 +2,12 @@
 
 public class ROT13 extends ROTNShift {
 
-    private String lowerCaseEncryptString;
-    private String upperCaseEncryptString;
-    private int shift;
 
     ROT13(Character cs, Character cf) {
-
-        this.upperCaseEncryptString = rotate(Character.toUpperCase(cs), Character.toUpperCase(cf));
-        this.lowerCaseEncryptString = rotate(Character.toLowerCase(cs), Character.toLowerCase(cf));
+        super(cs,cf);
     }
 
-    ROT13() {
 
-    }
 
 
 }
